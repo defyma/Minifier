@@ -1,7 +1,6 @@
-# Minifier View For Yii2
+# Minifier View (HTML, CSS and JavaScript) For Yii2
 
 This minifier using https://github.com/mrclay/minify, and integrated for yii2
-
 
 # How To Use
 
@@ -47,3 +46,9 @@ use app\components\defyma\DefyMinifier;
     <?php DefyMinifier::end(); ?>
      <!-- Minifier END -->
 ```
+----
+
+- HTML & CSS Minifier Using **Minify** By Stephen Clay <steve@mrclay.org>
+- JavaScript Minify Using **JShrink** By Elan Ruusamäe <glen@pld-linux.org>
+
+To Use Custom Library to Used HTML, CSS and JavaScript can be custom in method **run()** on **DefyMinifier.php**.
