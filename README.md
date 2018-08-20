@@ -7,7 +7,8 @@ This minifier using https://github.com/mrclay/minify, and integrated for yii2
 
 1. Clone Or Download this project, and extract
 2. Copy **defyma** folder to **@app\components**
-3. Use in Layout
+3. Use **use app\components\defyma\DefyMinifier;** in Layout
+4. Add **<?php DefyMinifier::begin(); ?>** and **<?php DefyMinifier::end(); ?>**
 
 ## Example
 layout/main.php
