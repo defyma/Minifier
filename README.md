@@ -48,7 +48,9 @@ use app\components\defyma\DefyMinifier;
 ```
 ----
 
+## Library used
+- Original Spaceless Yii2
 - HTML & CSS Minifier Using **Minify** By Stephen Clay <steve@mrclay.org>
 - JavaScript Minify Using **JShrink** By Elan Ruusamäe <glen@pld-linux.org>
 
-To Use Custom Library to Used HTML, CSS and JavaScript can be custom in method **run()** on **DefyMinifier.php**.
+To Use Custom Library please refer to **DefyMinifier.php**.
