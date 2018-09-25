@@ -1,4 +1,4 @@
-# Minifier View (HTML, CSS and JavaScript) For Yii2
+# Minifier View (HTML, CSS and JavaScript) For Yii2 Like "Spaceless Custom Yii2"
 
 This minifier using https://github.com/mrclay/minify, and integrated for yii2
 
