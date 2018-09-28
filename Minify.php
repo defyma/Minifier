@@ -22,10 +22,8 @@ class Minify extends Component
 
         $html_compress = $minifier->minifyHTML($content);
 
-        $html_compress .= "
-<!-- Generate Date: ".date('Y-m-d H:i:s')." -->
-
-";
+        $html_compress .= "<!-- Generate Date: ".date('Y-m-d H:i:s')." -->";
+        
         //Output
         return $html_compress;
     }
