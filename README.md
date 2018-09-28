@@ -2,24 +2,28 @@
 
 This minifier using https://github.com/mrclay/minify, and integrated for yii2
 
+## Install With Composer
+
+```
+php composer.phar require defyma/yii2-minifier:"v1.*"
+```
+
+## Or Require it
+```
+"defyma/yii2-minifier": "v1.*"
+```
+
 # How To Use
 
-1. Clone Or Download this project, and extract
-2. Copy **defyma** folder to **@app\components**
-3. Add ```use app\components\defyma\DefyMinifier;``` in Layout, And
-4. Add ```<?php DefyMinifier::begin(); ?>``` and ```<?php DefyMinifier::end(); ?>```
+1. Add ```<?php \defyma\helper\Minifier::begin(); ?>``` and ```<?php \defyma\helper\Minifier::begin(); ?>``` in Layout or View
 
 ## Example
 layout/main.php
 
 ```
-<?php
-//use it
-use app\components\defyma\DefyMinifier;
-?>
     
     <!-- Minifier Begin -->
-    <?php DefyMinifier::begin(); ?>
+    <?php \defyma\helper\Minifier::begin(); ?>
     
     <?php $this->beginPage() ?>
     
@@ -43,7 +47,7 @@ use app\components\defyma\DefyMinifier;
     
     <?php $this->endPage() ?>
     
-    <?php DefyMinifier::end(); ?>
+    <?php \defyma\helper\Minifier::begin(); ?>
      <!-- Minifier END -->
 ```
 ----
@@ -53,4 +57,4 @@ use app\components\defyma\DefyMinifier;
 - HTML & CSS Minifier Using **Minify** By Stephen Clay <steve@mrclay.org>
 - JavaScript Minify Using **JShrink** By Elan Ruusamäe <glen@pld-linux.org>
 
-To Use Custom Library please refer to **DefyMinifier.php**.
+To Use Custom Library please refer to **@vendor\defyma\yii2-minifier\Minifier.php**.
