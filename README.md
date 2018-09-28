@@ -5,12 +5,12 @@ This minifier using https://github.com/mrclay/minify, and integrated for yii2
 ## Install With Composer
 
 ```
-php composer.phar require defyma/yii2-minifier:"v1.*"
+php composer.phar require defyma/yii2-minifier:"v1.*.*"
 ```
 
 ## Or Require it
 ```
-"defyma/yii2-minifier": "v1.*"
+"defyma/yii2-minifier": "v1.*.*"
 ```
 
 # How To Use
