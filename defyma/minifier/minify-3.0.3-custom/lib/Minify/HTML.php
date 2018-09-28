@@ -159,14 +159,7 @@ class Minify_HTML_DEFYMA
             ,$this->_html
         );
 
-        $cpright = "
-
-<!--
-    Base64 Message:
-    RGV2ZWxvcCBieTogRGVmeSBNYSAoaHR0cDovL2RlZnltYS5jb20pIFtkZWZ5bWE4NUBnbWFpbC5jb21d
--->
-
-        ";
+        $cpright = "<!-- -->";
 
         return $this->_html.$cpright;
     }

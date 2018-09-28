@@ -5,12 +5,12 @@
  * defyma.com
  */
 
-namespace app\components\defyma;
+namespace defyma\helper;
 
 use Yii;
 use yii\base\Widget;
 
-class DefyMinifier extends Widget
+class Minifier extends Widget
 {
 
     public function init()
@@ -26,7 +26,8 @@ class DefyMinifier extends Widget
         $html = trim(preg_replace('/>\s+</', '><', ob_get_clean()));
 
         //Minify
-        require_once(Yii::getAlias('@app/components/defyma/minifier/Minifier.php'));
+        $minDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'minifier'.DIRECTORY_SEPARATOR."Minifier.php";
+        require_once($minDir);
         $minifier      = new \Minifier_DEFYMA;
         $html_compress = $minifier->minifyHTML($html);
 
