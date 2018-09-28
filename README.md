@@ -15,7 +15,7 @@ php composer.phar require defyma/yii2-minifier:"v1.*"
 
 # How To Use
 
-1. Add ```<?php \defyma\helper\Minifier::begin(); ?>``` and ```<?php \defyma\helper\Minifier::begin(); ?>``` in Layout or View
+1. Add ```<?php \defyma\helper\Minifier::begin(); ?>``` and ```<?php \defyma\helper\Minifier::end(); ?>``` in Layout or View
 
 ## Example
 layout/main.php
@@ -47,7 +47,7 @@ layout/main.php
     
     <?php $this->endPage() ?>
     
-    <?php \defyma\helper\Minifier::begin(); ?>
+    <?php \defyma\helper\Minifier::end(); ?>
      <!-- Minifier END -->
 ```
 ----
