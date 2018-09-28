@@ -27,7 +27,7 @@ class DefyMinifier extends Widget
 
         //Minify
         require_once(Yii::getAlias('@app/components/defyma/minifier/Minifier.php'));
-        $minifier      = new \Minifier;
+        $minifier      = new \Minifier_DEFYMA;
         $html_compress = $minifier->minifyHTML($html);
 
         $html_compress .= "

@@ -6,13 +6,13 @@
  * defyma.com
  */
 
-class Minifier {
+class Minifier_DEFYMA {
 
     private $minDir;
 
     function __construct()
     {
-        $this->minDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'minify-3.0.3'.DIRECTORY_SEPARATOR;
+        $this->minDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'minify-3.0.3-custom'.DIRECTORY_SEPARATOR;
 
         require $this->minDir.'config.php';
 
@@ -27,17 +27,18 @@ class Minifier {
         //Minify CSS
         require_once $this->minDir.'lib/Minify/CSS/Compressor.php';
         require_once $this->minDir.'lib/Minify/CommentPreserver.php';
+        require_once $this->minDir.'lib/Minify/CSS/UriRewriter.php';
         require_once $this->minDir.'lib/Minify/CSS.php';
 
         //Minify JS
         require_once $this->minDir.'lib/Minify/JS/JShrink_minifier.php';
         require_once $this->minDir.'lib/Minify/JS/JShrink.php';
 
-        $minOutput = Minify_HTML::minify($htmlView, array(
-            'cssMinifier' => array('Minify_CSS', 'minify'),
-            'jsMinifier' => array('Minify\JS\JShrink', 'minify')
+        $minOutput = Minify_HTML_DEFYMA::minify($htmlView, array(
+            'cssMinifier' => array('Minify_CSS_DEFYMA', 'minify'),
+            'jsMinifier' => array('Minify\JSdefyma\JShrink_DEFYMA', 'minify')
         ));
-        
+
         return $minOutput;
     }
 
