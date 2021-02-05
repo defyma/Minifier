@@ -183,7 +183,7 @@ class Minifier_DEFYMA
                 // new lines
                 case "\n":
                     // if the next line is something that can't stand alone preserve the newline
-                    if (strpos('(-+[@', $this->b) !== false) {
+                    if ($this->b && strpos('(-+[@', $this->b) !== false) {
                         echo $this->a;
                         $this->saveString();
                         break;
@@ -209,7 +209,7 @@ class Minifier_DEFYMA
                 default:
                     switch ($this->b) {
                         case "\n":
-                            if (strpos('}])+-"\'', $this->a) !== false) {
+                            if ($this->a && strpos('}])+-"\'', $this->a) !== false) {
                                 echo $this->a;
                                 $this->saveString();
                                 break;
@@ -231,7 +231,7 @@ class Minifier_DEFYMA
                             // check for some regex that breaks stuff
                             if ($this->a === '/' && ($this->b === '\'' || $this->b === '"')) {
                                 $this->saveRegex();
-                                continue;
+                                continue 3;
                             }
 
                             echo $this->a;
@@ -243,7 +243,7 @@ class Minifier_DEFYMA
             // do reg check of doom
             $this->b = $this->getReal();
 
-            if (($this->b == '/' && strpos('(,=:[!&|?', $this->a) !== false)) {
+            if (($this->b && $this->b == '/' && strpos('(,=:[!&|?', $this->a) !== false)) {
                 $this->saveRegex();
             }
         }
@@ -418,7 +418,7 @@ class Minifier_DEFYMA
     protected function getNext($string)
     {
         // Find the next occurrence of "string" after the current position.
-        $pos = strpos($this->input, $string, $this->index);
+        $pos = $string ? strpos($this->input, $string, $this->index) : false;
 
         // If it's not there return false.
         if ($pos === false) {
